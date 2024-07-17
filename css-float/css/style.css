@@ -1,0 +1,32 @@
+body {
+    font-size: 1.5rem;
+    box-sizing: border-box;
+}
+
+section {
+    background: bisque;
+    display: flow-root;
+    padding: 1rem;
+}
+
+.float{
+    background: #333;
+    width: 30vw;
+    height: 30vw;
+    color: whitesmoke;
+    padding: 1rem;
+}
+
+.clear {
+    clear: both;
+}
+
+.left {
+    float: left;
+    margin-right: 1rem;
+}
+
+.right {
+    float: right;
+    margin-left: 1rem;
+}

@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 5px double black;
+    border-radius: 50%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+main{
+    flex-grow: 1;
+    scroll-margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    align-items: center;
+}
+
+.card {
+    background-color: lightgray;
+    width: min(100%, 350px);
+    border-radius: 15px;
+    padding: 1rem;
+    border: 2px double black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+figure {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.card figcaption {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+body {
+    font-size: 1.5rem;
+    min-height: 100vh;
+    background-color: steelblue;
+    background-image: radial-gradient(whitesmoke, steelblue);
+    display: flex;
+    flex-direction: column;
+}
+
+header, footer {
+    position: sticky;
+    background-color: #1e293b;
+    color: whitesmoke;
+    text-align: center;
+}
+
+header {
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+}
+
+nav {
+    background-color: #fff;
+    display: flex;
+    padding: 0.5rem;
+    border-bottom: 2px solid black;
+    justify-content: space-evenly;
+}
+
+nav a, nav a:visited {
+    color: black;
+}
+
+nav a:hover, a:focus {
+    color: darkgray;
+    opacity: 50%;
+}
+
+@media screen and (min-width: 576px){
+    body {
+        background-color: darkblue;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .card {
+        width: min(100%, 400px);
+    }
+
+    main {
+        justify-content: center;
+        flex-flow: row wrap;
+     }
+}
+
+@media screen and (min-width: 768px){
+    body {
+        background-color: green;
+    }
+
+    .card {
+        width: min(100%, 325px);
+    }
+}
+
+@media screen and (min-width: 992px){
+    body {
+        background-color: purple;
+    }
+
+    .card {
+        width: min(100%, 400px);
+    }
+}
+
+@media screen and (min-width: 1200px){
+    body {
+        background-color: yellow;
+    }
+
+    .card {
+        width: min(calc(33%-1rem), 500px);
+    }
+}
+
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4){
+    body {
+        background-color: steelblue;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .card {
+        width: min(calc(33% - 0.25rem), 250px);
+    }
+
+    main {
+        flex-flow: row nowrap;
+    }
+
+    .card :is(figcaption, p) {
+        font-size: 1.25rem;
+      }
+
+}

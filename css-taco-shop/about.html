@@ -6,8 +6,9 @@
     <meta name="author" content="Tabassum W.">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta name="description" content="About The Little Taco Shop">
-    <title>About The Little Taco Shop</title>
+    <title>About LTS</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -38,18 +39,18 @@
         </figure>
     </section>
     <main class="main">
-        <article id="about" class="main__article">
+        <article id="about" class="main__article about">
             <h2>About <abbr title="Little Taco Shop">LTS</abbr></h2>
             <p>
                 <abbr title="Little Taco Shop">LTS</abbr> was founded in <time datatime="2022">2022</time>. 
                 Our shop was built from a <strong>love of tacos</strong>🌮🌮🌮. 
                 We hope our shop adds a unique and interesting place to our little town.
             </p>
-            <aside>
+            <aside class="about__trivia">
                 <h3>Taco Trivia</h3>
                 <details>
                     <summary> When did tacos first appear in the United States?</summary>
-                    <p>Jeffrey M. Pilcher, taco historian and professor of history at the University of Minnesota, says
+                    <p class="about__trivia-answer">Jeffrey M. Pilcher, taco historian and professor of history at the University of Minnesota, says
                         the earliest mention of tacos in the United States are in a newspaper from <time
                             datetime="1905">1905</time>. (Source: <cite>
                                 <a href="https://www.smithsonianmag.com/arts-culture/where-did-the-taco-come-from-81228162/" 
@@ -61,7 +62,7 @@
     </main>
     <footer class="footer">
         <p>
-            <span class="nowrap">Copyright &copy;</span> 
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span> 
             <span class="nowrap">Little Taco Shop</span>
         </p>
     </footer>

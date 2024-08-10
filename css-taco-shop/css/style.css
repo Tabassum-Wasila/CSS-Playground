@@ -31,33 +31,58 @@ button {
     --FS: clamp(1rem, 2vh, 1.5rem);
 
     /* COLORS */
-    --BGCOLOR: orange;
     --BGCOLOR-FADE: rgb(255, 222, 161);  
+    --BGCOLOR: orange;
     --BGIMAGE: linear-gradient(to bottom, var(--BGCOLOR), var(--BGCOLOR-FADE));
     --BODY-BGCOLOR: white;
-    --FONT-COLOR: black;
     --BORDER-COLOR: #333;
-    --HIGHLIGHT-COLOR: rgb(51, 178, 51);
-    --LINK-COLOR: black;
-    --LINK-HOVER: hsla(0, 0%, 0%, 0.6);
-    --LINK-ACTIVE: orange;
+    --BUTTON-COLOR: white;
+    --FONT-COLOR: black;
     --HEADER-BGCOLOR: black;
     --HEADER-COLOR: white;
-    --NAV-BGCOLOR: white;
     --HERO-BGCOLOR: rgb(51, 178, 51, 0.75);
     --HERO-COLOR: white;
+    --HIGHLIGHT-COLOR: rgb(51, 178, 51);
+    --LINK-ACTIVE: orange;
+    --LINK-COLOR: black;
+    --LINK-HOVER: hsla(0, 0%, 0%, 0.6);
+    --NAV-BGCOLOR: white;
 
     
     /* BORDERS */
     --BORDERS: 1px solid var(--BORDER-COLOR);
+    --BORDER-RADIUS: 15px;
 
     /* STANDARD PADDING */
     --PADDING-TB: 0.25em;
     --PADDING-SIDE: 2.5%;
 
     /* STANDARD MARGIN */
-    --MARGIN: clamp(1em, 2.5vh, 1.5em), 0;
+    --MARGIN: clamp(1em, 2.5vh, 1.5em) 0;
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --BGCOLOR-FADE: gray;
+        --BGCOLOR: black;
+        --BODY-BGCOLOR: #333;
+        --BORDER-COLOR: whitesmoke;
+        --BUTTON-COLOR: black;
+        --FONT-COLOR: whitesmoke;
+        --HEADER-BGCOLOR: black;
+        --HEADER-COLOR: whitesmoke;
+        --HERO-BGCOLOR: rgb(51, 178, 51, 0.75);
+        --HERO-COLOR: #333;
+        --HIGHLIGHT-COLOR: whitesmoke;
+        --HIGHLIGHT-COLOR: whitesmoke;
+        --LINK-ACTIVE: rgb(252, 200, 103);
+        --LINK-COLOR: whitesmoke;
+        --LINK-HOVER: orange;
+        --NAV-BGCOLOR: rgb(20, 20, 20);
+        
+    }    
+}
+
 
 /* || UTILITY CLASSES */
 .offscreen {
@@ -212,3 +237,145 @@ a:active {
 .main__article:last-child {
     min-height: calc(100vh - 20rem);
 }
+
+/* || ABOUT */
+
+.about__trivia {
+    margin: var(--MARGIN);
+}
+
+.about__trivia-answer {
+    margin-top: 1em;
+}
+
+/* || CONTACT */
+
+.contact__h2 {
+    margin: 0;
+}
+
+.contact__fieldset {
+    border: none;
+}
+
+.contact__p {
+    margin: 1em 0;
+}
+
+.contact__label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.contact__input,
+.contact__textarea {
+    border: var(--BORDERS);
+    border-width: 2px;
+    border-radius: var(--BORDER-RADIUS);
+    padding: 0.5em;
+    width: 100%;
+}
+
+.contact__textarea {
+    margin-top: 1rem;
+}
+
+.contact__button {
+    padding: 0.5em;
+    border: var(--BORDERS);
+    border-radius: var(--BORDER-RADIUS);
+    background-color: var(--HIGHLIGHT-COLOR);
+    color: var(--BUTTON-COLOR);
+    font-weight: bold;
+}
+
+/* || MENU */
+
+thead, tbody, tfoot, tr {
+    display: contents;
+}
+
+.menu__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+        "hd1 hd2 hd3"
+        "cr cr1 cr1p"
+        "cr cr2 cr2p"
+        "cr cr3 cr3p"
+        "sf sf1 sf1p"
+        "sf sf2 sf2p"
+        "sf sf3 sf3p"
+        "cs cs cs";
+    gap: 0.1em;
+    margin-bottom: 1em;
+}
+
+.menu__cr {
+    grid-area: cr;
+}
+
+.menu__sf {
+    grid-area: sf;
+}
+
+.menu__cs {
+    grid-area: cs;
+}
+
+.menu__sf,
+.menu__cr,
+.menu__cs,
+.menu__header,
+.menu__item {
+    display: grid;
+    place-content: center;    
+}
+
+.menu__sf,
+.menu__cr,
+.menu__cs,
+.menu__header {
+    color: var(--HIGHLIGHT-COLOR);
+    font-weight: bold;
+    height: 100%;
+}
+
+.menu__header,
+.menu__item {
+    width: 100%;
+    padding: 1em;
+    border: medium ridge var(--BORDER-COLOR); 
+}
+
+thead th:first-child {
+    border-top-left-radius: var(--BORDER-RADIUS);
+}
+
+thead th:last-child {
+    border-top-right-radius: var(--BORDER-RADIUS);
+}
+
+tfoot td {
+    border-bottom-left-radius: var(--BORDER-RADIUS);
+    border-bottom-right-radius: var(--BORDER-RADIUS);
+}
+
+@media screen and (min-width: 576px){
+    .header__h1::before {
+        content: '🌮 ';
+    }
+    .header__h1::after {
+        content: ' 🌮';
+    }
+    
+    .menu__sf,
+    .menu__cr,
+    .menu__cs,
+    .menu__header {
+        font-size: 125%;
+    }
+}
+
+
